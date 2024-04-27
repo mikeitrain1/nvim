@@ -1,5 +1,10 @@
 return {
 
+
+  {
+    "ixru/nvim-markdown"
+  },
+
   {
     "lewis6991/gitsigns.nvim",
     config = function()
