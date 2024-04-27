@@ -33,15 +33,15 @@ return {
       require("ibl").setup()
     end
   },
-  --
-  -- {
-  --     "nvim-tree/nvim-tree.lua",
-  --     config = function()
-  --         require("nvim-tree").setup()
-  --         vim.keymap.set('n', '<leader>z', ':NvimTreeFocus<CR>')
-  --         vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
-  --     end
-  -- },
+
+  {
+      "nvim-tree/nvim-tree.lua",
+      config = function()
+          require("nvim-tree").setup()
+          vim.keymap.set('n', '<leader>z', ':NvimTreeFocus<CR>')
+          vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+      end
+  },
 
 
   {
@@ -70,8 +70,15 @@ return {
     end
   },
 
-
-
+  {
+  "epwalsh/obsidian.nvim",
+  version = "*",  -- recommended, use latest release instead of latest commit
+  lazy = true,
+  ft = "markdown",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  }
+  },
 
 
   {

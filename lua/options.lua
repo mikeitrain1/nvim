@@ -44,4 +44,5 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-
+--obsidian 
+vim.opt.conceallevel = 2
