@@ -1,6 +1,5 @@
 return {
 
-
   {
     "ixru/nvim-markdown"
   },
@@ -30,23 +29,21 @@ return {
     end
   },
 
-
-
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("ibl").setup()
     end
   },
-
-  {
-      "nvim-tree/nvim-tree.lua",
-      config = function()
-          require("nvim-tree").setup()
-          vim.keymap.set('n', '<leader>z', ':NvimTreeFocus<CR>')
-          vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
-      end
-  },
+  --
+  -- {
+  --     "nvim-tree/nvim-tree.lua",
+  --     config = function()
+  --         require("nvim-tree").setup()
+  --         vim.keymap.set('n', '<leader>z', ':NvimTreeFocus<CR>')
+  --         vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+  --     end
+  -- },
 
 
   {

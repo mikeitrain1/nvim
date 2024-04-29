@@ -9,7 +9,7 @@ require("obsidian").setup({
     nvim_cmp = true,
     min_chars = 2,
   },
-  new_notes_location = "notes_subdir",
+  new_notes_location = "Sync",
   note_id_func = function(title)
     return title
   end,
