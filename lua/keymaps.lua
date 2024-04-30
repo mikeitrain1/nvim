@@ -1,17 +1,24 @@
-vim.keymap.set("n", "<leader>e", ':Ex<CR>')
-
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
  vim.keymap.set("i", "jk", "<ESC>")
  vim.keymap.set("i", "JK", "<ESC>")
-
-
-
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>vs', ':vsplit<CR>')
 vim.keymap.set('n', '<leader>hs', ':split<CR>')
+
+-- Select all
+vim.keymap.set("n", "==", "gg<S-v>G")
+
+
+-- Resize with arrows
+vim.keymap.set("n", "<C-S-Down>", ":resize +2<CR>", { desc = "Resize Horizontal Split Down" })
+vim.keymap.set("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Resize Horizontal Split Up" })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Resize Vertical Split Down" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Resize Vertical Split Up" })
+
 
 
 -- Obsiidian
