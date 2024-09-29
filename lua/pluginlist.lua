@@ -1,5 +1,10 @@
 return {
 
+
+    {
+        "ixru/nvim-markdown"
+    },
+
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
