@@ -16,8 +16,8 @@ vim.keymap.set("n", "==", "gg<S-v>G")
 -- Resize with arrows
 vim.keymap.set("n", "<C-S-Down>", ":resize +2<CR>", { desc = "Resize Horizontal Split Down" })
 vim.keymap.set("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Resize Horizontal Split Up" })
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Resize Vertical Split Down" })
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Resize Vertical Split Up" })
+vim.keymap.set("n", "<A-h>", ":vertical resize -2<CR>", { desc = "Resize Vertical Split Down" })
+vim.keymap.set("n", "<A-l>", ":vertical resize +2<CR>", { desc = "Resize Vertical Split Up" })
 
 
 

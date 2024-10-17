@@ -1,6 +1,18 @@
 return {
 
     {"ixru/nvim-markdown"},
+    {'mfussenegger/nvim-jdtls'},
+
+
+
+{
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
+},
+
+
+
 
     {
         'MeanderingProgrammer/render-markdown.nvim',
@@ -11,8 +23,6 @@ return {
         -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     },
-
-    {'mfussenegger/nvim-jdtls'},
 
     {
         "lewis6991/gitsigns.nvim",
@@ -42,16 +52,6 @@ return {
         config = function()
             require("ibl").setup()
         end
-    },
-
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*",  -- recommended, use latest release instead of latest commit
-        lazy = true,
-        ft = "markdown",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        }
     },
 
     {
@@ -130,6 +130,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
     },
+
 
     {
         'nvim-telescope/telescope.nvim',
