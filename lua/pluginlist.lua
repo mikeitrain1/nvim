@@ -1,6 +1,7 @@
 return {
 
     {"ixru/nvim-markdown"},
+
     {'mfussenegger/nvim-jdtls'},
 
     {
