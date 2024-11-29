@@ -1,7 +1,6 @@
 return {
 
     {"ixru/nvim-markdown"},
-
     {'mfussenegger/nvim-jdtls'},
 
     {
@@ -24,22 +23,6 @@ return {
         "lewis6991/gitsigns.nvim",
         config = function()
             require('gitsigns').setup()
-        end
-    },
-
-    {
-        'akinsho/toggleterm.nvim',
-        config = function()
-            require"toggleterm".setup {
-                size = 20,
-                open_mapping = [[<A-1>]],
-                shade_filetypes = {},
-                shade_terminals = true,
-                shading_factor = '1',
-                start_in_insert = true,
-                persist_size = true,
-                direction = 'horizontal'
-            }
         end
     },
 
@@ -70,7 +53,7 @@ return {
     {
         "mbbill/undotree",
         config = function()
-            vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<CR>", { desc = "Telescope Undo" })
+            vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { desc = "Telescope Undo" })
         end,
     },
 
@@ -81,28 +64,7 @@ return {
         end
     },
 
-    {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        config = function()
-            require('gruvbox').setup({
-                disable_background = true
-            })
-
-            function ColorMyPencils(color)
-                color = color or "gruvbox"
-                vim.cmd.colorscheme(color)
-
-                vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-                vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
-            end
-
-            ColorMyPencils()
-
-        end
-    },
-    --
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...}, 
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -151,5 +113,4 @@ return {
             })
         end,
     }
-
 }
