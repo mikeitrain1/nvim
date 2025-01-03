@@ -1,3 +1,2 @@
 # my neovim config 
-this is my neovim config no more ide's
-
+My neovim config with lsp and autocomplete and personal settings.
