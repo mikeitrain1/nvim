@@ -1,8 +1,8 @@
 -- require("obsidian").setup({
 --   workspaces = {
 --     {
---       name = "Notes",
---       path = "~/Documents/Notes",
+--       name = "Sync",
+--       path = "~/Sync",
 --     },
 --   },
 --   completion = {
