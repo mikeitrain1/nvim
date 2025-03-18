@@ -1,5 +1,6 @@
 return {
 
+        {"habamax/vim-godot", event = 'vimEnter'},
     {"ixru/nvim-markdown"},
     {'mfussenegger/nvim-jdtls'},
 

@@ -8,6 +8,7 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>vs', ':vsplit<CR>')
 vim.keymap.set('n', '<leader>hs', ':split<CR>')
+vim.keymap.set('n', '<leader>;', 'q:')
 
 -- Select all
 vim.keymap.set("n", "==", "gg<S-v>G")
