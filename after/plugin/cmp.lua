@@ -42,5 +42,6 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'path' },  -- Enables path completion
     },
 }
