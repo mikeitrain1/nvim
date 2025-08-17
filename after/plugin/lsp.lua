@@ -1,5 +1,4 @@
 local on_attach = function(_, bufnr)
-
   local bufmap = function(keys, func)
     vim.keymap.set('n', keys, func, { buffer = bufnr })
   end
@@ -26,54 +25,40 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+-- Example: a server you want outside of mason
+require('lspconfig').gdscript.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
-require('lspconfig').gdscript.setup(capabilities)
-
--- no mason
--- require('lspconfig').lua_ls.setup {
---     on_attach = on_attach,
---     capabilities = capabilities,
---     Lua = {
---       workspace = { checkThirdParty = false },
---       telemetry = { enable = false },
---     },
--- }
-
--- mason
+-- Mason setup
 require("mason").setup()
-require("mason-lspconfig").setup_handlers({
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls", "jdtls", "pyright", "clangd",  }, -- add more servers you want auto-installed
+}
 
-    function(server_name)
-        require("lspconfig")[server_name].setup {
-            on_attach = on_attach,
-            capabilities = capabilities
-        }
-    end,
+-- Configure installed servers manually
+local lspconfig = require("lspconfig")
 
-    ["lua_ls"] = function()
-        require('neodev').setup()
-        require('lspconfig').lua_ls.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                Lua = {
-                    workspace = { checkThirdParty = false },
-                    telemetry = { enable = false },
-                },
-            }
-        }
-    end
+-- Default handler for all servers
+for _, server in ipairs(require("mason-lspconfig").get_installed_servers()) do
+  if server ~= "lua_ls" then -- we’ll handle lua_ls separately
+    lspconfig[server].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+  end
+end
 
-    -- another example
-    -- ["omnisharp"] = function()
-    --     require('lspconfig').omnisharp.setup {
-    --         filetypes = { "cs", "vb" },
-    --         root_dir = require('lspconfig').util.root_pattern("*.csproj", "*.sln"),
-    --         on_attach = on_attach,
-    --         capabilities = capabilities,
-    --         enable_roslyn_analyzers = true,
-    --         analyze_open_documents_only = true,
-    --         enable_import_completion = true,
-    --     }
-    -- end,
-})
+-- Lua LS with neodev
+require("neodev").setup()
+lspconfig.lua_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
+}
